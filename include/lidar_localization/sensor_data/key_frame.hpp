@@ -14,6 +14,12 @@ namespace lidar_localization {
 
 struct KeyFrame {
 public:
+    static const int INDEX_P = 0;
+    static const int INDEX_R = 3;
+    static const int INDEX_V = 6;
+    static const int INDEX_A = 9;
+    static const int INDEX_G = 12;
+
     double time = 0.0;
 
     // key frame ID:
@@ -47,6 +53,27 @@ public:
       vel.v = prvag.vel.cast<float>();
       bias.accel = prvag.b_a.cast<float>();
       bias.gyro = prvag.b_g.cast<float>();
+    }
+
+    explicit KeyFrame(const int param_index, const double &T, const double *prvag) {
+      // set time:
+      time = T;
+      // set seq. ID:
+      index = param_index;
+      // set state:
+      Eigen::Map<const Eigen::Vector3d>     pos(prvag + INDEX_P);
+      Eigen::Map<const Eigen::Vector3d> log_ori(prvag + INDEX_R);
+      Eigen::Map<const Eigen::Vector3d>       v(prvag + INDEX_V);
+      Eigen::Map<const Eigen::Vector3d>     b_a(prvag + INDEX_A);
+      Eigen::Map<const Eigen::Vector3d>     b_g(prvag + INDEX_G);
+
+      pose.block<3, 1>(0, 3) = pos.cast<float>();
+      pose.block<3, 3>(0, 0) = Sophus::SO3d::exp(log_ori).matrix().cast<float>();
+
+      vel.v = v.cast<float>();
+      
+      bias.accel = b_a.cast<float>();
+      bias.gyro = b_g.cast<float>();
     }
 
     Eigen::Quaternionf GetQuaternion() const;

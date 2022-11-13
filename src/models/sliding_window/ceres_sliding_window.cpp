@@ -400,9 +400,7 @@ bool CeresSlidingWindow::GetLatestOptimizedKeyFrame(KeyFrame &optimized_key_fram
 
     const auto &latest_optimized_key_frame = optimized_key_frames_.back();
 
-    optimized_key_frame = KeyFrame(
-        N - 1, latest_optimized_key_frame.time, latest_optimized_key_frame.prvag
-    );
+    optimized_key_frame = KeyFrame(N - 1, latest_optimized_key_frame.time, latest_optimized_key_frame.prvag);
 
     return true;
 }
@@ -421,7 +419,7 @@ bool CeresSlidingWindow::GetOptimizedKeyFrames(std::deque<KeyFrame> &optimized_k
     for (int param_id = 0; param_id < N; param_id++) {
         const auto &optimized_key_frame = optimized_key_frames_.at(param_id);
 
-        optimized_key_frames.emplace_back( param_id, optimized_key_frame.time, optimized_key_frame.prvag );
+        optimized_key_frames.emplace_back(KeyFrame(param_id, optimized_key_frame.time, optimized_key_frame.prvag));
     }
 
     return true;
