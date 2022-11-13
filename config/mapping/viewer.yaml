@@ -1,4 +1,4 @@
-data_path: /home/rick/cat_ws/src/lidar_localization/slam_data   # 数据存放路径
+data_path: /home/rick/cat_ws/src/multi_sensor_localization_and_mapping/slam_data   # 数据存放路径
 
 # 全局地图
 global_map_filter: voxel_filter # 选择全局地图点云滤波方法，目前支持：voxel_filter

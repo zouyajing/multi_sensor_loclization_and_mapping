@@ -1,4 +1,4 @@
-data_path: /home/rick/cat_ws/src/lidar_localization/slam_data   # 数据存放路径
+data_path:  /home/rick/cat_ws/src/multi_sensor_localization_and_mapping/slam_data   # 数据存放路径
 
 registration_method: NDT          # 选择点云匹配方法，目前支持：NDT 
 loop_closure_method: scan_context # 选择回环检测方法, 目前支持scan_context

@@ -1,7 +1,7 @@
 #
 # data output path:
 #
-data_path: ./
+data_path: /home/rick/cat_ws/src/multi_sensor_localization_and_mapping/slam_data   # 数据存放路径
 
 #
 # key frame detection

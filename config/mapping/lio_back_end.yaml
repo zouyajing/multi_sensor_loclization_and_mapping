@@ -1,4 +1,4 @@
-data_path: ./   # 数据存放路径
+data_path: /home/rick/cat_ws/src/multi_sensor_localization_and_mapping/slam_data   # 数据存放路径
 
 # 关键帧
 key_frame_distance: 2.0 # 关键帧距离
