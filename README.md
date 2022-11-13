@@ -4,9 +4,9 @@
  It consists of :
  
  
-  -  a mapping node based on graph-based optimization, which utilze RTK, IMU, NDT-based Lidar odometry, and loop closure;
-  -  a localization node based on ESKF, which utlized IMU, NDT-based map matching, motion model and velocity;
-  -  a localization node based on graph optimization, which utlized IMU, NDT-based map matching, motion model and velocity;
+  -  a mapping pipeline based on graph-based optimization, which utilze RTK, IMU, NDT-based Lidar odometry, and loop closure;
+  -  a localization pipeline based on ESKF, which utlized IMU, NDT-based map matching, motion model and velocity;
+  -  a localization pipeline based on graph optimization, which utlized IMU, NDT-based map matching, motion model and velocity;
  
  ## Dependencies
  
