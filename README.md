@@ -6,7 +6,7 @@
  
   -  a mapping pipeline based on graph-based optimization, which utilze RTK, IMU, NDT-based Lidar odometry, and loop closure;
   -  a localization pipeline based on ESKF, which utlized IMU, NDT-based map matching, motion model and velocity;
-  -  a localization pipeline based on graph optimization, which utlized IMU, NDT-based map matching, motion model and velocity;
+  -  a localization pipeline based on graph optimization, which utlized IMU, NDT-based map matching, motion model and velocity.
  
  ## Dependencies
  
